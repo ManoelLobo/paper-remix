@@ -38,10 +38,6 @@ body {
   }
 }
 
-.hidden {
-  opacity: 0;
-}
-
 .page {
   background-color: white;
   width: 100vw;
@@ -50,81 +46,9 @@ body {
   padding: 30px 0;
 }
 
-.page .headline {
-  border-bottom: 1px solid #e2e2e2;
-  margin: 0 auto 6px;
-  width: 90%;
-  text-align: left;
-  font-size: 1.15rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-}
-
-.page .headline .image {
-  display: inline-block;
-}
-
-.page .headline span {
-  display: inline-block;
-  width: calc(90vw - 90px);
-  margin-left: 10px;
-  vertical-align: top;
-}
-
-.page .byline {
-  text-align: left;
-  width: 90%;
-  margin: 0 auto 16px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 100;
-}
-
-.page .snippet {
-  width: 90%;
-  margin: 0 auto;
-  text-align: left;
-  font-size: 14px;
-  font-family: Georgia, serif;
-}
-
-.page .snippet span.text::after {
-  content: ' ';
-}
-
 @media (min-width: 450px) {
   .page {
     width: 50vw;
-  }
-
-  .page .headline {
-    width: 75%;
-    padding-bottom: 12px;
-    font-size: 1.5625rem;
-    line-height: 1.6875rem;
-    font-weight: 700;
-  }
-
-  .page .headline .image {
-    min-width: 100%;
-    margin-bottom: 16px;
-  }
-
-  .page .headline span {
-    display: inline;
-    width: 100%;
-    margin-left: 0;
-    position: inherit;
-    top: 0;
-  }
-
-  .page .byline {
-    width: 75%;
-  }
-
-  .page .snippet {
-    width: 75%;
-    font-size: 16px;
   }
 
   .flip-container {
@@ -133,9 +57,11 @@ body {
     perspective: 100vw;
     perspective-origin: center top;
   }
+
   .flip-container .flipper {
     transform-origin: 0% 50%;
   }
+
   .flip-container.flip .flipper {
     transform: rotateX(180deg);
     transform-origin: 100% 50%;
@@ -171,6 +97,7 @@ body {
     transform: rotate3D(0, 1, 0, 180deg);
     transform-origin: center;
   }
+
   .back .article.top {
     transform: rotate(180deg);
   }
@@ -183,18 +110,22 @@ body {
       perspective: 100vw;
       perspective-origin: left top;
     }
+
     .flip-container .flipper {
       transform-origin: 0% 50%;
     }
+
     .flip-container,
     .front,
     .back {
       width: 50vw;
     }
+
     .flip-container.flip .flipper {
       transform: rotateY(-180deg);
       transform-origin: 0% 0%;
     }
+
     .front,
     .back {
       backface-visibility: hidden;
@@ -202,13 +133,16 @@ body {
       background-color: white;
       height: 100vh;
     }
+
     .front {
       /* for firefox 31 */
       /*transform: rotateY(0deg);*/
     }
+
     .back {
       transform: rotateY(180deg);
     }
+
     .back .article.top {
       transform: rotate(0deg);
     }
