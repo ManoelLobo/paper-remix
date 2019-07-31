@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Page from './page';
 
-const Sheet = ({ index, articles }) => {
+const Sheet = ({ index, pages }) => {
   const [flip, setFlip] = useState(false);
   const [flippedIndex, setFlippedIndex] = useState(999 - index);
-  const front = articles[index];
-  const back = articles[index + 1];
+  const front = pages[index].html;
+  const back = pages[index + 1].html;
 
   useEffect(() => {
     if (flip) {
@@ -30,7 +30,7 @@ const Sheet = ({ index, articles }) => {
               setFlip(!flip);
             }}
           >
-            <Page className="bottom" article={front} />
+            <Page className="bottom" content={front} />
           </div>
           <div
             className="back"
@@ -38,7 +38,7 @@ const Sheet = ({ index, articles }) => {
               setFlip(!flip);
             }}
           >
-            <Page className="top" article={back} />
+            <Page className="top" content={back} />
           </div>
         </div>
       </div>
